@@ -1,6 +1,6 @@
 # alex-algolia (Movies Dataset)
 
-* hosted on: https://alexo12.github.io/movies-instaSearch/build/index.html
+* hosted on: https://alexo12.github.io/movies-instaSearch/
 
 ## Project Summary
 
