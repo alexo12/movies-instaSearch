@@ -13,7 +13,7 @@ body { font-family: sans-serif; background-color: #1f2833;}
 .hit-name, .genres, .fa, .ais-Hits, .feather-x { color: #66FCF1; }
 .hit-description { color: #888; font-size: 14px; margin-bottom: .5em }
 .movieImg {width: 150px; height: 230px;}
-.modalMovieImg {width: 100px; height: 140px;}
+.modalMovieImg {width: 120px; height: 140px;}
 .ais-RefinementList-labelText {color: #C5C6C7; padding-right: .5em;}
 .ais-RatingMenu-count {color: #C5C6C7}
 .ais-ClearRefinements-button {padding: 0.6rem 1rem;}

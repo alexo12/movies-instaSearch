@@ -61,7 +61,7 @@ const Hit = props => {
         <Box className="movieModal rounded">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x d-flex"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
           <div className="row">
-            {!actors && <img src={movieImgSrc} className="modalMovieImg mx-auto" alt="" />}
+            <img src={movieImgSrc} className="modalMovieImg mx-auto d-none d-md-block" alt="" />
             <div className='col-12 text-center'>
                 <div className="hit-name pt-2">
                   <h2>{title}</h2>
