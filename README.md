@@ -1,5 +1,7 @@
 # alex-algolia (Movies Dataset)
 
+* hosted on: https://alexo12.github.io/movies-instaSearch/build/index.html
+
 ## Project Summary
 
 - In this Movie Database, the user has the ability to search any movie and obtain results instantly. Displayed to the user upon rendering, are 15 movies sorted by relevance with their title, release year and movie poster. When a user hovers over a certain movie they will notice a 'more info' icon appear near the bottom right of the movie card. Selecting the movie prompts a modal to the user with additional information on the film such as the genre(s), audience score and rating, as well as lead actors of the movie. The User also has the ability to filter resuls be genre and/or movie rating.

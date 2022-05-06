@@ -31,7 +31,7 @@ const Hit = props => {
         if(actorImgExist) {
           actorsArr.push(
             <div className="col-6 col-md-3 text-center" key={actorName}>
-              <img src={actorImg} alt={actorName} className="modalMovieImg" />
+              <img src={actorImg} alt={actorName} className="actorImg" />
               <p className="actor-name">{actorName}</p>
             </div>
           )
