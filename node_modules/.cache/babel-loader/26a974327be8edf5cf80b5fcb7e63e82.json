@@ -1,1 +1,0 @@
-{"ast":null,"code":"'use strict';\n\nmodule.exports = function compact(array) {\n  if (!Array.isArray(array)) {\n    return [];\n  }\n\n  return array.filter(Boolean);\n};","map":null,"metadata":{},"sourceType":"script"}

@@ -18,10 +18,17 @@
 ## Question 1 - Answer
 
 - Hello George,
+
   A record is simply an object that is stored in an Index, which is a collection of records. Since its an object it can hold as many attributes as needed. Indexing is the process of restructuring your dataset/Index to best optimize search speed and capabilities. Luckily with the assistance of algolia, you won't need to program the actual algorithym that finds the results based on the user input. But algolia has a set of configuration settings that you are recommended to customize in your favor to farther improve search results given to the user. The 2 most prominent settings are 'Searchable attributes' and 'Ranking and Sorting' which are both stored under 'relevance essentials'. You can configure any attribute from your records to be a searchable attribute to the instant search technology. The best properties to use for this configuration would be names, titles, years, or any other type of identifier for the type of product in your Index. For 'Ranking and Sorting', the best metrics to use would be attributes like price, views, score, sales or any other metric that measures the quality of the record in comparison to other records in the Index. You can also set whether the sorted results ascend or descend in the results. Meaning if you set 'year' to descending and have it as one of the prinary rankers, the indexing will return results from most recent to oldest, and vice versa if you are to set it to 'descending'. 
 
+## Question 2 - Answer
+
 - Hello Matt, 
+
   Although you aren't able to delete indicies as soon as you load onto your dashboard, a vast majority of the functionality available to you can also be done through api. Since you want to clear and delete indicies while iterating, automating that operation in the code with the help of the api will be the best possible route for you. Algolia has strong SEO capabilities, so searching something like 'algolia delete indices' will lead you straight to the documentations.
 
+## Question 3 - Answer
+
 - Hello Leo,
+
   Integrating algolia to your website should be easy and require little development. The step by step walkthrough and code-along in the documentations make it stress free for a developer to implement algolia to thier web or mobile app. The process of incorporating is simple, import the dataset that your site uses to algolia then configure simple settings that improves algolia's search strength. You'll then want to install some of algolias libraries to connect to your remote index and render widgets just as ypu would render a child component. Algolia has a deticated showcase page for all of their widgets with a detailed guide on how to configure and use all of them. Unless you want to greatly configure each widget to be fully custom in your favor, the most development work you'd be looking to do would be styling the widgets to best compliment your already existing UI. 
