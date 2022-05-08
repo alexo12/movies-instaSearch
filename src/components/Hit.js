@@ -4,7 +4,6 @@
 /* eslint-disable no-console */
 import * as React from 'react';
 import defaultMovieImg from '../assets/img/movieIcon-150x150.png';
-import axios from 'axios';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import urlExist from 'url-exist';
@@ -12,21 +11,24 @@ import PropTypes from 'prop-types';
 const { useState, useEffect } = React;
 
 const Hit = props => {
-  let {image, actor_facets, title, year, genre, rating, score, color} = props.hit;
-  const [movieImgSrc, setMovieImgSrc] = useState(image);
-  const [validateActorImgs, setValidateActorImgs] = useState(false);
-  const [actors, setActors] = useState(null);
+  let {image, actor_facets, title, year, genre, rating, score, actors} = props.hit;
+  const [moviePoster, setMoviePoster] = useState(image)
+  const [hasActorImgs, setHasActorImgs] = useState(false);
+  const [actorsList, setActorsList] = useState(false);
   const [open, setOpen] = useState(false);
   const toggleModal = () => open ? setOpen(false) : setOpen(true);
 
   const validate = async () => {
-    const movieImg = await urlExist(image)
-    if (!movieImg) image = defaultMovieImg
+    // console.log(title, image);
+    // const movieImg = await urlExist(image)
+    // console.log(title, movieImg)
+    if (!moviePoster) setMoviePoster(defaultMovieImg);
     const actorsArr = [];
-    for(let i = 0; i < 4; i++) {
+    const numOfActors = actor_facets.length >= 4 ? 4 : actor_facets.length;
+    for(let i = 0; i < numOfActors; i++) {
       if(actor_facets[i]) {
-        const actorImg = actor_facets[i].split('|')[0];
-        const actorName = actor_facets[i].split('|')[1];
+        const actorImg = actor_facets[i].endsWith(actors[i]) ? actor_facets[i].split('|')[1] : actor_facets[i];
+        const actorName = actors[i];
         const actorImgExist = await urlExist(actorImg);
         if(actorImgExist) {
           actorsArr.push(
@@ -38,7 +40,10 @@ const Hit = props => {
         }
       }
     }
-    if(actorsArr.length) setActors(actorsArr);
+    if(actorsArr.length) {
+      setHasActorImgs(true);
+      setActorsList(actorsArr)
+    };
   }
   useEffect(() => {
     // image urls in the movie dataset provided in the github url were out of date/no good
@@ -49,7 +54,7 @@ const Hit = props => {
   return (
     <div className={`row movie-item`} onClick={toggleModal}>
       <div className={'col-12'}>
-        <img src={movieImgSrc} onError={defaultMovieImg} className="movieImg" alt="" />
+        <img src={moviePoster} onError={defaultMovieImg} className="movieImg" alt="" />
         <div className="hit-name pt-2">
           <span>{title}</span>
         </div>
@@ -59,9 +64,9 @@ const Hit = props => {
       </div>
       <Modal open={open} onClose={toggleModal} aria-labelledby="modal-modal-title" aria-describedby="modal-modal-description">
         <Box className="movieModal rounded">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x d-flex"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="col-2 feather feather-x d-flex"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
           <div className="row">
-            <img src={movieImgSrc} className="modalMovieImg mx-auto d-none d-md-block" alt="" />
+            <img src={moviePoster} className="modalMovieImg mx-auto d-none d-md-block" alt="" />
             <div className='col-12 text-center'>
                 <div className="hit-name pt-2">
                   <h2>{title}</h2>
@@ -76,9 +81,9 @@ const Hit = props => {
               </div>
             </div>
             <div className='col-12 mt-3'>
-              {actors &&
+              {hasActorImgs &&
                 <><h3 className={"whiteThemeText"}>Lead Roles</h3>
-                <div className={'row d-flex justify-content-center'}>{actors}</div></> 
+                <div className={'row d-flex justify-content-center'}>{actorsList}</div></> 
               }
             </div>
           </div>
