@@ -1,16 +1,16 @@
 {
   "main.css": "/movies-instaSearch/static/css/main.a57257c1.chunk.css",
-  "main.js": "/movies-instaSearch/static/js/main.d5bee6c1.chunk.js",
-  "main.js.map": "/movies-instaSearch/static/js/main.d5bee6c1.chunk.js.map",
-  "static/js/1.ad894365.chunk.js": "/movies-instaSearch/static/js/1.ad894365.chunk.js",
-  "static/js/1.ad894365.chunk.js.map": "/movies-instaSearch/static/js/1.ad894365.chunk.js.map",
+  "main.js": "/movies-instaSearch/static/js/main.aac345df.chunk.js",
+  "main.js.map": "/movies-instaSearch/static/js/main.aac345df.chunk.js.map",
+  "static/js/1.0f062ad3.chunk.js": "/movies-instaSearch/static/js/1.0f062ad3.chunk.js",
+  "static/js/1.0f062ad3.chunk.js.map": "/movies-instaSearch/static/js/1.0f062ad3.chunk.js.map",
   "runtime~main.js": "/movies-instaSearch/static/js/runtime~main.aa4ec543.js",
   "runtime~main.js.map": "/movies-instaSearch/static/js/runtime~main.aa4ec543.js.map",
   "static/media/movieIcon-150x150.png": "/movies-instaSearch/static/media/movieIcon-150x150.71dfdf62.png",
-  "static/media/App.css": "/movies-instaSearch/static/media/TOMMY___.4287edc9.TTF",
   "static/media/trianglify-background3.svg": "/movies-instaSearch/static/media/trianglify-background3.4670e96c.svg",
+  "static/media/App.css": "/movies-instaSearch/static/media/TOMMY___.4287edc9.TTF",
   "static/css/main.a57257c1.chunk.css.map": "/movies-instaSearch/static/css/main.a57257c1.chunk.css.map",
   "index.html": "/movies-instaSearch/index.html",
-  "precache-manifest.c955c56b3644b16665f64ebdbed3ae82.js": "/movies-instaSearch/precache-manifest.c955c56b3644b16665f64ebdbed3ae82.js",
+  "precache-manifest.bb8dc32fc56815f5f2a5df6701a6d82e.js": "/movies-instaSearch/precache-manifest.bb8dc32fc56815f5f2a5df6701a6d82e.js",
   "service-worker.js": "/movies-instaSearch/service-worker.js"
 }
