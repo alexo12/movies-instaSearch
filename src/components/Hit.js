@@ -1,12 +1,7 @@
-/* eslint-disable react/jsx-key */
-/* eslint-disable prettier/prettier */
-/* eslint-disable no-unused-expressions */
-/* eslint-disable no-console */
 import * as React from 'react';
 import defaultMovieImg from '../assets/img/movieIcon-150x150.png';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
-import urlExist from 'url-exist';
 import PropTypes from 'prop-types';
 const { useState, useEffect } = React;
 
@@ -19,25 +14,19 @@ const Hit = props => {
   const toggleModal = () => open ? setOpen(false) : setOpen(true);
 
   const validate = async () => {
-    // console.log(title, image);
-    // const movieImg = await urlExist(image)
-    // console.log(title, movieImg)
     if (!moviePoster) setMoviePoster(defaultMovieImg);
     const actorsArr = [];
     const numOfActors = actor_facets.length >= 4 ? 4 : actor_facets.length;
     for(let i = 0; i < numOfActors; i++) {
       if(actor_facets[i]) {
-        const actorImg = actor_facets[i].endsWith(actors[i]) ? actor_facets[i].split('|')[1] : actor_facets[i];
+        const actorImg = actor_facets[i].endsWith(actors[i]) ? actor_facets[i].split('|')[0] : actor_facets[i];
         const actorName = actors[i];
-        const actorImgExist = await urlExist(actorImg);
-        if(actorImgExist) {
-          actorsArr.push(
-            <div className="col-6 col-md-3 text-center" key={actorName}>
-              <img src={actorImg} alt={actorName} className="actorImg" />
-              <p className="actor-name">{actorName}</p>
-            </div>
-          )
-        }
+        actorsArr.push(
+          <div className="col-6 col-md-3 text-center" key={actorName}>
+            <img src={actorImg} alt={actorName} className="actorImg" />
+            <p className="actor-name">{actorName}</p>
+          </div>
+        )
       }
     }
     if(actorsArr.length) {
@@ -46,8 +35,6 @@ const Hit = props => {
     };
   }
   useEffect(() => {
-    // image urls in the movie dataset provided in the github url were out of date/no good
-    // replaced any image that wasnt resolving anymore with a fresh image from the movieDB api
     validate();
   }, []);
 
